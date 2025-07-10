@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "a82f17fb-6996-442d-8cf7-f8c2eb59b259",
+		"name": "Big Data Performance Tests",
+		"description": "Pruebas de rendimiento PostgreSQL y Firestore con batch_size controlable.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29694768"
+	},
+	"item": [
+		{
+			"name": "1️⃣ PostgreSQL - Bulk Insert Users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-bigdata/postgres-bulk-insert?batch_size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-bigdata",
+						"postgres-bulk-insert"
+					],
+					"query": [
+						{
+							"key": "batch_size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2️⃣ PostgreSQL - Retrieve Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-bigdata/postgres-retrieve-users?batch_size=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-bigdata",
+						"postgres-retrieve-users"
+					],
+					"query": [
+						{
+							"key": "batch_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4️⃣ Firestore - Bulk Insert Views for Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-bigdata/firebase-insert-views?batch_size=500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-bigdata",
+						"firebase-insert-views"
+					],
+					"query": [
+						{
+							"key": "batch_size",
+							"value": "500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5️⃣ Firestore - Retrieve Views for Video",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-bigdata/firestore-retrieve-views?video_id=150002&batch_size=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-bigdata",
+						"firestore-retrieve-views"
+					],
+					"query": [
+						{
+							"key": "video_id",
+							"value": "150002"
+						},
+						{
+							"key": "batch_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/test-bigdata/performance/trending-videos-sql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"test-bigdata",
+						"performance",
+						"trending-videos-sql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

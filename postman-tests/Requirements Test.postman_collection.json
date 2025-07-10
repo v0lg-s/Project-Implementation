@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "0d036d83-b80c-4708-8c82-323be7d99069",
+		"name": "Requirements Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29694768"
+	},
+	"item": [
+		{
+			"name": "FR#1 Register User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Juan\",\n    \"last_name\": \"Colorad\",\n    \"username\": \"up_the_blues\",\n    \"email\": \"jcol@example.com\",\n    \"password\": \"securepassword\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#2 Upload Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "creator_id",
+							"value": "10024",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "My test video GG",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Hey this is a video about technology",
+							"type": "text"
+						},
+						{
+							"key": "duration",
+							"value": "120",
+							"type": "text"
+						},
+						{
+							"key": "visibility",
+							"value": "public",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/upload-video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"upload-video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#3 Like Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "video_id",
+							"value": "150002"
+						},
+						{
+							"key": "user_id",
+							"value": "10002"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/like-video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"like-video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#3 Comment Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "video_id",
+							"value": "150002"
+						},
+						{
+							"key": "user_id",
+							"value": "10045"
+						},
+						{
+							"key": "comment",
+							"value": "This video is awesome"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/comment-video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"comment-video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#3 Follow Creator",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "follower_id",
+							"value": "10026"
+						},
+						{
+							"key": "followed_id",
+							"value": "11233"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/follow-creator",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"follow-creator"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#4 Search Videos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/search-videos?keyword=dog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"search-videos"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "dog"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#5 Report Video",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "video_id",
+							"value": "50334"
+						},
+						{
+							"key": "reporter_id",
+							"value": "10007"
+						},
+						{
+							"key": "reason",
+							"value": "Inappropriate content"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/report-video",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"report-video"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#6 Create Campaign",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "advertiser_id",
+							"value": "503"
+						},
+						{
+							"key": "budget",
+							"value": "15452"
+						},
+						{
+							"key": "targeting",
+							"value": "Age 18-25, Colombia"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/create-campaign",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"create-campaign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#6 Campaign Analytics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/campaign-analytics?advertiser_id=877",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"campaign-analytics"
+					],
+					"query": [
+						{
+							"key": "advertiser_id",
+							"value": "877"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FR#7 Creator Video Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/requirements/creator-video-analytics?creator_id=10010",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"requirements",
+						"creator-video-analytics"
+					],
+					"query": [
+						{
+							"key": "creator_id",
+							"value": "10010"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
